@@ -45,5 +45,11 @@ app/src/main/java/com/vim/vrcfriends/
   image/       头像下载与圆形位图缓存
   ui/          刷新节流、列表快照缓存
   MainActivity.kt  界面与表冠接入
-icon-src/      图标生成脚本（输出物不入库）
+icon-src/      图标源（SVG + 渲染/缩放说明，见 icon-src/README.md）
 ```
+
+## 图标
+
+深色底 + 青绿 VR 头显 + 底部在线绿点，**手写 SVG** 生成（`icon-src/`），不依赖任何生图模型。
+绿点放在 108dp 网格的 66% 安全区内（最大内容半径 325 px < 338 px），避免被 ColorOS 二次裁切成看不见。
+改图标：编辑 `icon-src/icon-fg.svg` / `icon-full.svg` → 按 `icon-src/README.md` 重新渲染并缩放 → 跑一遍单测与 `assembleDebug`。
