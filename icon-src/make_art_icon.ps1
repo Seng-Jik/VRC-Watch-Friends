@@ -52,14 +52,14 @@ foreach ($k in $legacy.Keys) {
     $dir = Join-Path $root "mipmap-$k"
     New-Item -ItemType Directory -Force -Path $dir | Out-Null
     $s = $legacy[$k]
-    $b1 = Draw-Icon $s $true
+    $b1 = Draw-Icon $s $false
     $b1.Save((Join-Path $dir 'ic_launcher.png'), [System.Drawing.Imaging.ImageFormat]::Png)
     $b1.Dispose()
-    $b2 = Draw-Icon $s $true
+    $b2 = Draw-Icon $s $false
     $b2.Save((Join-Path $dir 'ic_launcher_round.png'), [System.Drawing.Imaging.ImageFormat]::Png)
     $b2.Dispose()
     $s2 = $adaptive[$k]
-    $b3 = Draw-Icon $s2 $true
+    $b3 = Draw-Icon $s2 $false
     $b3.Save((Join-Path $dir 'ic_launcher_foreground.png'), [System.Drawing.Imaging.ImageFormat]::Png)
     $b3.Dispose()
     Write-Output "$k ok"
