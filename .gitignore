@@ -12,6 +12,7 @@ local.properties
 
 # 生成物 / 调试产物
 icon-src/*.png
+icon-src/*.jpg
 shot*.png
 framestats.txt
 *.apk

@@ -47,7 +47,3 @@ app/src/main/java/com/vim/vrcfriends/
   MainActivity.kt  界面与表冠接入
 icon-src/      图标生成脚本（输出物不入库）
 ```
-
-## 图标
-
-图标素材由画师 **regreg** 创作；若侵权请联系我删除。

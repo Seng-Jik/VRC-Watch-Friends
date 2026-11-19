@@ -1,12 +1,12 @@
 Add-Type -AssemblyName System.Drawing
 
-$srcPath = "D:\Vim\vrc-watch-friends\icon-src\src-art.jpg"
+$srcPath = "D:\Vim\vrc-watch-friends\icon-src\src-art.png"
 $root = "D:\Vim\vrc-watch-friends\app\src\main\res"
 $src = [System.Drawing.Bitmap]::FromFile($srcPath)
 
 $side = [Math]::Min($src.Width, $src.Height)
 $x0 = [int](($src.Width - $side) / 2)
-$y0 = [int]($src.Height * 0.06)
+$y0 = [int](($src.Height - $side) / 2)
 if ($y0 + $side -gt $src.Height) { $y0 = $src.Height - $side }
 
 function Draw-Icon([int]$S, [bool]$withDot) {
