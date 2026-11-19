@@ -1,0 +1,20 @@
+// Verification-only init script: mavenCentral() TLS is broken on this network
+// (repo.maven.apache.org handshake reset). Route dependency resolution through
+// Aliyun mirrors instead of touching the project's settings.gradle.kts.
+def mirrors = [
+    "https://maven.aliyun.com/repository/public",
+    "https://maven.aliyun.com/repository/google",
+    "https://maven.aliyun.com/repository/gradle-plugin",
+]
+
+settingsEvaluated { settings ->
+    settings.pluginManagement.repositories.clear()
+    mirrors.each { m -> settings.pluginManagement.repositories.maven { url = uri(m) } }
+    settings.pluginManagement.repositories.gradlePluginPortal()
+    settings.pluginManagement.repositories.google()
+
+    def drm = settings.dependencyResolutionManagement
+    drm.repositories.clear()
+    mirrors.each { m -> drm.repositories.maven { url = uri(m) } }
+    drm.repositories.google()
+}
