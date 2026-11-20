@@ -42,3 +42,30 @@ $chrome='C:\Program Files\Google\Chrome\Application\chrome.exe'
 1. `fg` 不透明像素离中心最大距离 **< 338 px**（108dp 网格的 66% 安全区）
 2. 绿点存在（底部中间），镜片为亮青
 3. 改完 `./gradlew :app:testDebugUnitTest :app:assembleDebug --init-script build-tools/init-aliyun.gradle` 全绿
+
+## 数值验收（自动化，代替「用眼睛看」）
+
+模型没有视觉，所以把「表上长什么样」全部变成可判定的数字。三个脚本，改图标后按序跑：
+
+```powershell
+pwsh -File .\qa-icon.ps1          # 15 个资源：尺寸/绿点像素/绿点距边/圆角 alpha/安全区/对比度
+pwsh -File .\make-contact-sheet.ps1  # 联系表 preview-contact-sheet.png + 激进裁切存活测试
+pwsh -File .\qa-apk.ps1           # 直接验收 APK 里最终打进包的图标（aapt2 会重压缩，只能比像素）
+```
+
+### 2026-11-20 08:30 验收结果（全部 PASS）
+
+| 检查 | 结果 |
+|---|---|
+| 尺寸 | 15/15 与期望完全一致（48/72/96/144/192、fg 108/162/216/324/432） |
+| 绿点存在 | mdpi 48px 仍有 **12 px**（≈3.75px 直径），最大 192px 有 166 px —— 不会「小尺寸消失」 |
+| 绿点位置 | 距图边 **16.0–16.3 dp**（全密度一致，`cy=680` 居中） |
+| 圆角裁剪 | `_round` 四角 alpha **= 0**，5/5 |
+| 前景安全区 | 最大半径归一 0.63–0.64 < 0.660（338px/512px，即 1024 网格下 ≈324 px），5/5 |
+| 本体/底对比度 | 4.44–13.20（WCAG 3:1 阈值之上，48px 时 6.30） |
+| **激进裁切存活** | 圆形遮罩保留 **100%→75%** 六档，绿点像素恒为 **166**（一像素不掉）⇒ 这次不管启动器裁多狠都吃不到绿点 |
+| **APK 内实测** | 15/15 条目从 APK 解出后重新计数，与源一致 |
+
+联系表：`preview-contact-sheet.png` —— 192 原图 / 192 圆裁 90% / 真实尺寸阶梯 192→48 / 48px 六倍最近邻放大。
+
+> 注：`qa-report.json`、`qa-apk-report.json`、`qa-crop-survival.json` 是机器可读结果，进版本库便于对比回归。

@@ -1,0 +1,122 @@
+[
+  {
+    "Entry": "res/mipmap-hdpi-v4/ic_launcher_foreground.png",
+    "Kind": "fg",
+    "Size": "162x162",
+    "Green": 122,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-hdpi-v4/ic_launcher_round.png",
+    "Kind": "round",
+    "Size": "72x72",
+    "Green": 22,
+    "CornerA": 0,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-hdpi-v4/ic_launcher.png",
+    "Kind": "legacy",
+    "Size": "72x72",
+    "Green": 22,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-mdpi-v4/ic_launcher_foreground.png",
+    "Kind": "fg",
+    "Size": "108x108",
+    "Green": 54,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-mdpi-v4/ic_launcher_round.png",
+    "Kind": "round",
+    "Size": "48x48",
+    "Green": 12,
+    "CornerA": 0,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-mdpi-v4/ic_launcher.png",
+    "Kind": "legacy",
+    "Size": "48x48",
+    "Green": 12,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xhdpi-v4/ic_launcher_foreground.png",
+    "Kind": "fg",
+    "Size": "216x216",
+    "Green": 218,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xhdpi-v4/ic_launcher_round.png",
+    "Kind": "round",
+    "Size": "96x96",
+    "Green": 42,
+    "CornerA": 0,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xhdpi-v4/ic_launcher.png",
+    "Kind": "legacy",
+    "Size": "96x96",
+    "Green": 42,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xxhdpi-v4/ic_launcher_foreground.png",
+    "Kind": "fg",
+    "Size": "324x324",
+    "Green": 488,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xxhdpi-v4/ic_launcher_round.png",
+    "Kind": "round",
+    "Size": "144x144",
+    "Green": 96,
+    "CornerA": 0,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xxhdpi-v4/ic_launcher.png",
+    "Kind": "legacy",
+    "Size": "144x144",
+    "Green": 96,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xxxhdpi-v4/ic_launcher_foreground.png",
+    "Kind": "fg",
+    "Size": "432x432",
+    "Green": 877,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xxxhdpi-v4/ic_launcher_round.png",
+    "Kind": "round",
+    "Size": "192x192",
+    "Green": 166,
+    "CornerA": 0,
+    "Verdict": "PASS"
+  },
+  {
+    "Entry": "res/mipmap-xxxhdpi-v4/ic_launcher.png",
+    "Kind": "legacy",
+    "Size": "192x192",
+    "Green": 166,
+    "CornerA": -1,
+    "Verdict": "PASS"
+  }
+]
